@@ -128,19 +128,6 @@ void EqAudioProcessorEditor::resized()
     peakGainSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.5));
     peakQualitySlider.setBounds(bounds);
 }
-void EqAudioProcessorEditor::parameterValueChanged(int parameterIndex, float newValue)
-{
-    parametersChanged.set(true);
-}
-
-void SimpleEQAudioProcessorEditor::timerCallback()
-{
-    if (parametersChanged.compareAndSetBool(false, true))
-    {
-        //update the monochain
-        //signal a repaint
-    }
-}
 
 std::vector<juce::Component*> EqAudioProcessorEditor::getComps()
 {
