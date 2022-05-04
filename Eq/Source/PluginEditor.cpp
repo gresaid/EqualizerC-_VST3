@@ -133,12 +133,11 @@ void EqAudioProcessorEditor::parameterValueChanged(int parameterIndex, float new
     parametersChanged.set(true);
 }
 
-void SimpleEQAudioProcessorEditor::timerCallback()
+void EqAudioProcessorEditor::timerCallback()
 {
     if (parametersChanged.compareAndSetBool(false, true))
     {
-        //update the monochain
-        //signal a repaint
+        
     }
 }
 
